@@ -4,5 +4,7 @@ from classroom import models
 
 admin.site.register([
     models.Course,
+    models.Content,
     models.Instructor
+    
 ])

@@ -2,11 +2,16 @@
 
 {% block content %}
 
-<h1>Recommended Courese</h1>
+<h1>Recommended Courses</h1>
 
-<ul>
-    {% for course in recommended_courses %}
-        <li>{{course}}</li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for course in recommended_courses %}
+            <li>
+                <a href="{% url 'get_course' course.id %}">{{course}}</a>
+                
+            </li>
+
+        {% endfor %}
+    </ul>
+    
 {% endblock %}
