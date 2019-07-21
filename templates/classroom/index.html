@@ -1,0 +1,12 @@
+{% extends 'classroom/layouts/base.html' %}
+
+{% block content %}
+
+<h1>Recommended Courese</h1>
+
+<ul>
+    {% for course in recommended_courses %}
+        <li>{{course}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
