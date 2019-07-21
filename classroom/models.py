@@ -8,6 +8,7 @@ class Course(models.Model):
     description = models.TextField()
     instructor = models.ForeignKey('Instructor',on_delete = models.CASCADE)
     contents = models.ManyToManyField('Content')
+    recommended = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

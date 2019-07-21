@@ -5,7 +5,7 @@ from classroom import models
 
 def index(request):
 
-    courses = models.Course.objects.all()
+    courses = models.Course.objects.filter(recommended = True)
 
     context={
         "recommended_courses":courses
@@ -14,9 +14,18 @@ def index(request):
 
 
 def course(request, id):
+    
     course= models.Course.objects.get(id = id)
-
+  
     context={
         "course" : course
     }
     return render(request,'classroom/course.html',context)
+
+def AllCourses(request):
+    courses= models.Course.objects.all()
+
+    context = {
+        "courses":courses
+    }
+    return render(request,'classroom/allcourses.html',context)
